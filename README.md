@@ -1,8 +1,9 @@
 ## My Angular Playground
 here i implement tutorials and keep them for future purposes.
+(module folders are linked)
 
 code samples:
-- ngrx-store
+- [ngrx-store](playground/src/app/ngrx-store/)
 
 
 todo:
