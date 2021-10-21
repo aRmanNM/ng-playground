@@ -1,0 +1,14 @@
+<div>
+  <input type="text" [(ngModel)]="newTodoDesc" />
+  <button (click)="addTodo()">add</button>
+</div>
+<p *ngFor="let todo of todos">
+  <input
+    type="checkbox"
+    [checked]="todo.completed"
+    (change)="toggleTodo(todo)"
+  />
+  <del *ngIf="todo.completed">{{ todo.description }} </del>
+  <span *ngIf="!todo.completed">{{ todo.description }} </span>
+  <button (click)=removeTodo(todo)>delete</button>
+</p>

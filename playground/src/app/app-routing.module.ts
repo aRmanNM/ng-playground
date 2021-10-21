@@ -7,6 +7,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./ngrx-store/ngrx.module').then((m) => m.NgrxModule),
   },
+  {
+    path: 'observable-data-service',
+    loadChildren: () =>
+      import('./observable-data-service/ods.module').then((m) => m.ODSModule),
+  },
 ];
 
 @NgModule({
