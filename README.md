@@ -1,8 +1,13 @@
-code samples:
-- ngrx-store
+## My Angular Playground
+here i implement angular stuff and keep them for future purposes.
 
+code samples:
+- [ngrx-store](playground/src/app/ngrx-store/)
+- [observable-data-service](playground/src/app/observable-data-service/)
 
 
 todo:
-- [ ] observable data services
 - [ ] file upload component
+- [x] observable data services
+- [x] ngrx-store
+
