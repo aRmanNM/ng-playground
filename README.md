@@ -5,9 +5,8 @@ code samples:
 - [ngrx-store](playground/src/app/ngrx-store/)
 - [observable-data-service](playground/src/app/observable-data-service/)
 
-
 todo:
 - [ ] file upload component
-- [x] observable data services
+- [x] observable data service
 - [x] ngrx-store
 
