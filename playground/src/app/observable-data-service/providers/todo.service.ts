@@ -35,7 +35,7 @@ export class TodoService {
   delete(todo: Todo): Observable<Todo[]> {
     // replace with http request
     const index = this._todos.indexOf(todo);
-    this._todos = this._todos.slice(index, 1);
+    this._todos.splice(index, 1);
     return of(this._todos);
   }
 
