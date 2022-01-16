@@ -6,7 +6,7 @@ code samples:
 - [observable-data-service](playground/src/app/observable-data-service/)
 
 todo:
-- [ ] file upload component
+- [ ] form validators
 - [x] observable data service
 - [x] ngrx-store
 
