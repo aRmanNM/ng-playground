@@ -6,6 +6,7 @@ code samples:
 - [observable-data-service](playground/src/app/observable-data-service/)
 
 todo:
+- [ ] ssr with angular universal
 - [ ] form validators
 - [x] observable data service
 - [x] ngrx-store
