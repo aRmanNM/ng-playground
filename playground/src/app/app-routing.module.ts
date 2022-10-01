@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { SSRComponent } from './ssr/ssr.component';
 
 const routes: Routes = [
   {
@@ -12,10 +13,18 @@ const routes: Routes = [
     loadChildren: () =>
       import('./observable-data-service/ods.module').then((m) => m.ODSModule),
   },
+  {
+    path: 'ssr',
+    component: SSRComponent,
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, {
+      initialNavigation: 'enabledBlocking',
+    }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
