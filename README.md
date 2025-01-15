@@ -6,6 +6,7 @@ quick nav:
 
 - [ngrx-store](playground/src/app/ngrx-store/)
 - [observable-data-service](playground/src/app/observable-data-service/)
+- [server-sent-events](playground/src/app/server-sent-events/)
 
 doc links:
 
@@ -13,6 +14,7 @@ doc links:
 - https://richbray.medium.com/a-beginners-guide-to-ngrx-store-bc2184d6d7f0
 - https://malcoded.com/posts/server-rendering-pitfalls
 - https://angular.io/guide/universal
+- https://medium.com/@andrewkoliaka/implementing-server-sent-events-in-angular-a5e40617cb78
 
 todo:
 
@@ -22,3 +24,4 @@ todo:
 - [ ] route guard
 - [x] observable data service
 - [x] ngrx-store
+- [x] server-sent events

@@ -1,0 +1,21 @@
+<p>sample: get report items as each iteration is calculated and received from backend</p>
+
+<button *ngIf="!isWorking" id="start" (click)="getReports()">Start</button>
+<button *ngIf="isWorking" id="stop" (click)="stop()">Stop</button>
+
+<table *ngIf="report.length > 0" id="table">
+  <tr>
+    <th>Id</th>
+    <th>From</th>
+    <th>To</th>
+    <th>AverageScore</th>
+    <th>SuccessPercentage</th>
+  </tr>
+  <tr *ngFor="let reportItem of report">
+    <td>{{ reportItem.id }}</td>
+    <td>{{ reportItem.from }}</td>
+    <td>{{ reportItem.to }}</td>
+    <td>{{ reportItem.averageScore }}</td>
+    <td>{{ reportItem.successPercentage }}</td>
+  </tr>
+</table>

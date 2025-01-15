@@ -17,6 +17,11 @@ const routes: Routes = [
     path: 'ssr',
     component: SSRComponent,
   },
+  {
+    path: 'sse',
+    loadChildren: () =>
+      import('./server-sent-events/sse.module').then((m) => m.SSEModule),
+  },
 ];
 
 @NgModule({

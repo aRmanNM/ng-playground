@@ -22,6 +22,25 @@ export function app(): express.Express {
   server.set('view engine', 'html');
   server.set('views', distFolder);
 
+  // sse api endpoint
+  server.get('/api/report', async (req, res) => {
+    // Set headers for SSE
+    res.setHeader('Content-Type', 'text/event-stream');
+    res.setHeader('Cache-Control', 'no-cache');
+    res.setHeader('Connection', 'keep-alive');
+
+    try {
+        // Use the generator function to stream reports
+        for await (const report of generateReports()) {
+            res.write(`data: ${JSON.stringify(report)}\n\n`);
+        }
+        res.end();
+    } catch (err) {
+        console.error("Error streaming reports:", err);
+        res.end();
+    }
+  });
+
   // Example Express Rest API endpoints
   // server.get('/api/**', (req, res) => { });
   // Serve static files from /browser
@@ -42,9 +61,26 @@ function run(): void {
 
   // Start up the Node server
   const server = app();
+
   server.listen(port, () => {
     console.log(`Node Express server listening on http://localhost:${port}`);
   });
+}
+
+async function* generateReports() {
+  for (let i = 1; i <= 10; i++) {
+      // Simulate an async calculation
+      await new Promise(resolve => setTimeout(resolve, 1000));
+
+      // Yield a new report object
+      yield {
+          id: i,
+          from: (new Date(new Date().getDate() - (10-i+1))).toISOString(),
+          to: (new Date(new Date().getDate() - (10-i))).toISOString(),
+          averageScore: Math.random()*20,
+          successPercentage: Math.random()*100,
+      };
+  }
 }
 
 // Webpack will replace 'require' with '__webpack_require__'
