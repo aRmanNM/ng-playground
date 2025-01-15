@@ -25,3 +25,9 @@ todo:
 - [x] observable data service
 - [x] ngrx-store
 - [x] server-sent events
+
+how to run:
+
+```bash
+ng run playground:serve-ssr
+```
