@@ -7,6 +7,7 @@ quick nav:
 - [ngrx-store](playground/src/app/ngrx-store/)
 - [observable-data-service](playground/src/app/observable-data-service/)
 - [server-sent-events](playground/src/app/server-sent-events/)
+- [route-guard](playground/src/app/route-guard/)
 
 doc links:
 
@@ -21,7 +22,7 @@ todo:
 - [x] ssr with angular universal
 - [ ] custom pipe
 - [ ] async validator
-- [ ] route guard
+- [x] route guard
 - [x] observable data service
 - [x] ngrx-store
 - [x] server-sent events

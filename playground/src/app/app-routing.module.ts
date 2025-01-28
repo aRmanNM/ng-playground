@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SSRComponent } from './ssr/ssr.component';
+import { ProtectedComponent } from './route-guard/protected.component';
+import { PasswordGuard } from './route-guard/password.guard';
 
 const routes: Routes = [
   {
@@ -22,6 +24,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./server-sent-events/sse.module').then((m) => m.SSEModule),
   },
+  {
+    path: 'protected',
+    component: ProtectedComponent,
+    canActivate: [PasswordGuard]
+  }
 ];
 
 @NgModule({
