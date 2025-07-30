@@ -1,29 +1,29 @@
-# Stage 1: Build the Angular SSR application
-FROM node:lts-alpine as build
+# Stage 1: Build the Angular app
+FROM node:lts-alpine AS builder
 
 WORKDIR /app
 
+# Install dependencies
 COPY package.json package-lock.json ./
 RUN npm ci
 
+# Copy rest of the project
 COPY . .
-RUN npm run build:ssr # This command typically builds both client and server bundles for SSR
 
-# Stage 2: Serve the application
-FROM node:lts-alpine
+# Build SSR app
+RUN npm run build:ssr
+
+# Stage 2: Run the SSR server
+FROM node:lts-alpine AS runtime
 
 WORKDIR /app
 
-# Copy only the necessary build artifacts from the build stage
-COPY --from=build /app/dist/playground/browser ./dist/browser
-COPY --from=build /app/dist/playground/server ./dist/server
-COPY --from=build /app/dist/playground/package.json ./package.json
+# Copy build output from builder stage
+COPY --from=builder /app/dist/playground /app/dist/playground
 
-# Install production dependencies for the server
-RUN npm install --production
+# Copy only necessary files
+COPY --from=builder /app/package.json /app/package-lock.json ./
+RUN npm ci --omit=dev
 
-# Expose the port your Angular SSR server listens on (default is often 4000)
-# EXPOSE 4000
-
-# Command to run the SSR server
-CMD ["node", "dist/server/main.js"]
+# Set the command to run the server
+CMD ["node", "dist/playground/server/main.js"]
