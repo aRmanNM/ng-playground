@@ -20,13 +20,21 @@ doc links:
 
 todo:
 
-- [x] ssr with angular universal
-- [x] custom pipe
-- [ ] async validator
+- [x] ngrx-store
 - [x] route guard
 - [x] observable data service
-- [x] ngrx-store
+- [x] ssr with angular universal
 - [x] server-sent events
+- [x] custom pipe
+- [ ] async validator
+- [ ] push notification
+- [ ] pwa
+- [ ] websocket
+- [ ] theming using ui library
+- [ ] dark/light mode
+- [ ] localization
+- [ ] maps
+- [ ] authentication
 
 how to run:
 
