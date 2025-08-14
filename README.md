@@ -8,6 +8,7 @@ quick nav:
 - [observable-data-service](playground/src/app/observable-data-service/)
 - [server-sent-events](playground/src/app/server-sent-events/)
 - [route-guard](playground/src/app/route-guard/)
+- [pipe](playground/src/app/pipe/)
 
 doc links:
 
@@ -20,7 +21,7 @@ doc links:
 todo:
 
 - [x] ssr with angular universal
-- [ ] custom pipe
+- [x] custom pipe
 - [ ] async validator
 - [x] route guard
 - [x] observable data service

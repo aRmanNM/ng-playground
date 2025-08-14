@@ -20,6 +20,11 @@ const routes: Routes = [
     component: SSRComponent,
   },
   {
+    path: 'pipe',
+    loadChildren: () =>
+      import('./pipe/pipe.module').then((m) => m.PipeModule),
+  },
+  {
     path: 'sse',
     loadChildren: () =>
       import('./server-sent-events/sse.module').then((m) => m.SSEModule),
@@ -39,4 +44,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
