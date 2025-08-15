@@ -9,6 +9,7 @@ quick nav:
 - [server-sent-events](playground/src/app/server-sent-events/)
 - [route-guard](playground/src/app/route-guard/)
 - [pipe](playground/src/app/pipe/)
+- [validator](playground/src/app/async-validator/)
 
 doc links:
 
@@ -17,6 +18,7 @@ doc links:
 - https://malcoded.com/posts/server-rendering-pitfalls
 - https://angular.io/guide/universal
 - https://medium.com/@andrewkoliaka/implementing-server-sent-events-in-angular-a5e40617cb78
+- https://medium.com/@ignatovich.dm/async-validators-in-angular-why-they-matter-best-practices-and-example-implementation-fdee42005674
 
 todo:
 
@@ -26,7 +28,7 @@ todo:
 - [x] ssr with angular universal
 - [x] server-sent events
 - [x] custom pipe
-- [ ] async validator
+- [x] async validator
 - [ ] push notification
 - [ ] pwa
 - [ ] websocket

@@ -1,0 +1,19 @@
+<form [formGroup]="form">
+    <label>
+        name: <input formControlName="name" />
+    </label>
+
+    <div style="color: red;">
+        <p *ngIf="form.get('name')?.errors?.isRequired">این فیلد اجباری است</p>
+        <p *ngIf="form.get('name')?.errors?.minLength">حداقل طول رشته {{ form.get('name')?.errors?.minLength }} است</p>
+        <p *ngIf="form.get('name')?.errors?.maxLength">حداکثر طول رشته {{ form.get('name')?.errors?.maxLength }} است</p>
+        <p *ngIf="form.get('name')?.errors?.exists">این نام قابل انتخاب نیست</p>
+        <p *ngIf="form.get('name')?.errors?.invalid">فرمت اشتباه است - تنها ازحروف استفاده کنید</p>
+    </div>
+
+    <!-- <div>{{ form.get('name')?.errors | json }}</div> -->
+</form>
+
+<br>
+
+<p>reserved names: "arman", "ehsan", "saeed", "ali"</p>

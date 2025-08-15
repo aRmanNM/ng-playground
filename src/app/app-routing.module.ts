@@ -25,6 +25,11 @@ const routes: Routes = [
       import('./pipe/pipe.module').then((m) => m.PipeModule),
   },
   {
+    path: 'validator',
+    loadChildren: () =>
+      import('./async-validator/valdiator.module').then((m) => m.ValidatorModule),
+  },
+  {
     path: 'sse',
     loadChildren: () =>
       import('./server-sent-events/sse.module').then((m) => m.SSEModule),
