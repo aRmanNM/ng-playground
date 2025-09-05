@@ -10,6 +10,7 @@ quick nav:
 - [route-guard](playground/src/app/route-guard/)
 - [pipe](playground/src/app/pipe/)
 - [validator](playground/src/app/async-validator/)
+- [authentication](playground/src/app/route-guard/)
 
 doc links:
 
@@ -36,7 +37,7 @@ todo:
 - [ ] dark/light mode
 - [ ] localization
 - [ ] maps
-- [ ] authentication
+- [x] authentication
 
 how to run:
 

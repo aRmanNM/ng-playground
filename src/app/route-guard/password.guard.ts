@@ -5,16 +5,22 @@ import {
   Router,
   RouterStateSnapshot,
 } from '@angular/router';
+import { AuthService } from './providers/auth.service';
 
 export const PasswordGuard: CanActivateFn = (
   route: ActivatedRouteSnapshot,
   state: RouterStateSnapshot
 ) => {
   const router = inject(Router);
+  const authService = inject(AuthService);
 
-  let pass = window.prompt('enter pass: ');
+  const isAuthenticated = authService.isAuthenticated();
+  if (isAuthenticated.status === true) {
+    return true;
+  }
 
-  if (pass === 'pass') return true;
-
+  router.navigate(['protected/login'], {
+    queryParams: { returnUrl: state.url },
+  });
   return false;
 };

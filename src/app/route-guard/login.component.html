@@ -1,0 +1,18 @@
+<p style="color: red;">{{ error }}</p>
+<form [formGroup]="loginForm" (submit)="login()">
+  <div>
+    <label for="username">username: </label>
+    <input (change)="clearError()" autocomplete="off" formControlName="username" maxlength="40" />
+  </div>
+
+  <div>
+    <label for="password">password: </label>
+    <input (change)="clearError()" type="password" formControlName="password" maxlength="40" />
+  </div>
+
+  <button [disabled]="!loginForm.valid" type="submit">login</button>
+</form>
+
+<br />
+<p><b>user: </b>guest</p>
+<p><b>pass: </b> guest</p>

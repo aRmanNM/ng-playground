@@ -28,6 +28,8 @@
     "@nguniversal/express-engine": "^14.2.0",
     "cors": "^2.8.5",
     "express": "^4.15.2",
+    "jsonwebtoken": "^9.0.2",
+    "jwt-decode": "^4.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

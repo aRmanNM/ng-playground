@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SSRComponent } from './ssr/ssr.component';
-import { ProtectedComponent } from './route-guard/protected.component';
-import { PasswordGuard } from './route-guard/password.guard';
 
 const routes: Routes = [
   {
@@ -36,8 +34,8 @@ const routes: Routes = [
   },
   {
     path: 'protected',
-    component: ProtectedComponent,
-    canActivate: [PasswordGuard]
+    loadChildren: () =>
+      import('./route-guard/protected.module').then((m) => m.ProtectedModule),
   }
 ];
 
